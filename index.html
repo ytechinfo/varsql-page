@@ -5,6 +5,7 @@
 <title>Varsql</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
 <meta content="varsql web sql tool" name="keywords">
 <meta content="varsql web sql tool" name="description">
 
@@ -19,18 +20,18 @@
 </head>
 
 <body id="body">
-
-	<div id="toparea" class="d-none d-lg-block">
-		<div class="container clearfix">
-			<div class="contact-info float-right">
-				<i class="fa fa-envelope-o"></i>
-				<a href="mailto:varsqlinfo@gmail.com">varsqlinfo@gmail.com</a>
-			</div>
-		</div>
-	</div>
+	<button type="button" id="mobile-nav-toggle"><i class="fa fa-bars"></i></button>
 
 	<!-- header -->
 	<div id="gnb">
+		<div class="header">
+			<div class="container clearfix">
+				<div class="contact-info float-right">
+					<i class="fa fa-envelope-o"></i>
+					<a href="mailto:varsqlinfo@gmail.com">varsqlinfo@gmail.com</a>
+				</div>
+			</div>
+		</div>
 		<div class="container">
 
 			<div id="logo" class="pull-left">
@@ -41,11 +42,12 @@
 
 			<nav id="nav-menu-container">
 				<ul class="nav-menu">
-					<li class="menu-active"><a href="#body">Home</a></li>
-					<li><a href="https://github.com/varsqlinfo/varsql/releases"	target="_blank">download</a></li>
-					<li><a href="#support">Support</a></li>
+					<li class="menu-item active" data-target="#body"><a href="javascript:;">Home</a></li>
+					<li><a href="https://github.com/varsqlinfo/varsql/releases" target="_blank">download</a></li>
+					<li class="menu-item" data-target="#support"><a href="javascript:;">Support</a></li>
 				</ul>
 			</nav>
+			<div id="mobile-body-overly"></div>
 			<!-- #nav-menu-container -->
 		</div>
 	</div>
@@ -56,12 +58,12 @@
 		<div class="intro-bg"></div>	
 		<div class="intro-content">
 			<h2>
-				Varsql은 개발자가 <span>설치 없이</span><br/>
-				<span>웹</span>으로 접속하여 데이타 베이스를 <br/>
+				Varsql은 <span>설치없이 웹으로</span><br/>
+				데이타 베이스를 <br/>
 				개발 관리 할수 있는 어플리케이션입니다.
 			</h2>
 			<div>
-				<a href="#movie" class="btn-movie scrollto">소개 영상보기</a>
+				<a href="javascript:;" class="btn-movie" data-target="#movie">소개 영상보기</a>
 				<a href="https://github.com/varsqlinfo/varsql/releases"	target="_blank" class="btn-download scrollto">Download</a>
 			</div>
 		</div>
@@ -79,7 +81,7 @@
         </div>
 
 		<div class="movie-content">
-			<iframe id="ytplayer" type="text/html" width="640" height="360"  src="https://www.youtube.com/embed/JKLwGEiSxGc?autoplay=0" frameborder="0"></iframe>
+			<iframe id="ytplayer" src="https://www.youtube.com/embed/JKLwGEiSxGc?autoplay=0" frameborder="0"></iframe>
 		</div>          
 	 </div>
 	</section>
@@ -153,3 +155,42 @@
 	<script src="js/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+<script>
+
+$(function (){
+	$('#mobile-nav-toggle , #mobile-body-overly').on('click',function (e) {
+		$('body').toggleClass('mobile-nav-active');
+		$('#mobile-nav-toggle i').toggleClass('fa-times fa-bars');
+		$('#mobile-body-overly').toggle();
+	});
+
+	$(document).on('click','[data-target]',function (e) {
+		var sEle = $(this);
+
+		if ($('body').hasClass('mobile-nav-active')) {
+			$('body').removeClass('mobile-nav-active');
+			$('#mobile-nav-toggle i').toggleClass('fa-times fa-bars');
+			$('#mobile-body-overly').fadeOut();
+		}
+		
+		if(sEle.hasClass('menu-item')){
+			$('.menu-item.active').removeClass('active');
+			sEle.addClass('active');
+		}
+
+		var targetSelector = sEle.attr('data-target');
+
+		var movePos = $(targetSelector).offset().top;
+		
+		var topH = $('#gnb').outerHeight();
+
+		$('html').animate({
+			scrollTop : movePos - (topH+10)
+		}, 1000);
+
+		return false;
+	});
+})
+ 
+</script>
