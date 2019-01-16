@@ -9,7 +9,7 @@ body {
 }
 
 a {
-  color: #50d8af;
+  color: #464bfb;
   transition: 0.5s;
 }
 
@@ -36,6 +36,10 @@ h6 {
   font-weight: 400;
   margin: 0 0 20px 0;
   padding: 0;
+}
+
+.clear{
+	 display:block; clear:both 
 }
 
 /* ---------------- gnb ---------------- */
@@ -407,7 +411,25 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .browser-content ul li{
 	list-style: none;
+    padding: 5px 0px;
 }
+
+/* ---------------- browser ---------------- */
+#database{
+
+}
+
+#database ul{
+	padding: 0 10px;
+	margin: 0 10px;
+}
+
+.database-content ul li{
+	list-style: none;
+	float:left;
+    padding: 0px 20px 0px 0px;
+}
+
 
 /* ---------------- support ---------------- */
 #support{
