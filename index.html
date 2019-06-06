@@ -249,6 +249,12 @@ $(function (){
 		
 		ga('send', 'event', 'main','button','file_download',1);
 
+		gtag('event', 'main', {
+		'event_category': 'button_click',
+		'event_label': 'file_download',
+		'value': 1
+		});
+
 		window.open("https://github.com/varsqlinfo/varsql/releases/download/0.0.1/varsql-webappv.0.0.1.zip","","");
 	});
 })
