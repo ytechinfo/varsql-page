@@ -62,7 +62,7 @@
 					<li class="menu-item active" data-target="#body"><a href="javascript:;">Home</a></li>
 					<li class="menu-item active" data-target="#database"><a href="javascript:;">지원 DB</a></li>
 					<li class="menu-item active" data-target="#browser"><a href="javascript:;">지원 브라우저</a></li>
-					<li><a href="https://github.com/varsqlinfo/varsql/releases/download/0.0.1/varsql-webappv.0.0.1.zip" target="_blank">다운로드</a></li>
+					<li class="download-btn"><a href="javascript:;" target="_blank">다운로드</a></li>
 					<li class="menu-item" data-target="#support"><a href="javascript:;">문의</a></li>
 				</ul>
 			</nav>
@@ -243,6 +243,13 @@ $(function (){
 		}, 1000);
 
 		return false;
+	});
+
+	$('.download-btn').on('click', function (){
+		
+		ga('send', 'event', 'main','button','file_download',1);
+
+		window.open("https://github.com/varsqlinfo/varsql/releases/download/0.0.1/varsql-webappv.0.0.1.zip","","");
 	});
 })
  
