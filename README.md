@@ -29,4 +29,8 @@ varsql websqltool sqltool
     새로만들기 클릭후 
     변수 이름 : JRE_HOME
     변수값 : ["java설치 경로 추가 후 확인"] ex)C:\Java\zulu\jre
-    
+
+![jre_home](https://user-images.githubusercontent.com/46696460/63925077-6b86c900-ca84-11e9-8d98-b845d7a044c1.PNG)
+
+![java_home](https://user-images.githubusercontent.com/46696460/63925076-6b86c900-ca84-11e9-873f-db4c3d9a1ce4.PNG)
+
