@@ -3,6 +3,7 @@
 varsql websqltool sqltool 
 
 
+
 # 실행방법
 
 01. Releases에서 파일 다운로드
@@ -15,6 +16,7 @@ varsql websqltool sqltool
    id : varsqladmin
    pw : varsqladmin
 
+
 # 실행시 문제 해결 방법. 
 실행 : C:/varsql-webappv.0.0.1/bin>startup.bat
 
@@ -25,6 +27,6 @@ varsql websqltool sqltool
  조치
     내컴퓨터-> 마우스 오른쪽후 속성 클릭 -> 고급 시스템 설정 -> 환경변수 클릭
     새로만들기 클릭후 
-    변수 이름 : JAVA_HOME
-    변수값 : ["java설치 경로 추가 후 확인"] ex)C:\Java\zulu\
+    변수 이름 : JRE_HOME
+    변수값 : ["java설치 경로 추가 후 확인"] ex)C:\Java\zulu\jre
     
