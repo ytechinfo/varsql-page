@@ -20,7 +20,7 @@ varsql websqltool sqltool
 # 실행시 문제 해결 방법. 
 실행 : C:/varsql-webappv.0.0.1/bin>startup.bat
 
-1. JAVA_HOME 이 시스템 변수에 등록되어있지 않을경우. 
+1. JRE_HOME 이 시스템 변수에 등록되어있지 않을경우 발생.
  로그 
     The JRE_HOME environment variable is not defined correctly
     This environment variable is needed to run this program
