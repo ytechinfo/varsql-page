@@ -16,6 +16,9 @@ varsql websqltool sqltool
    id : varsqladmin
    pw : varsqladmin
 
+# 라이선스
+   프리웨어
+   개인/기업/관공서/학교/회사/법인/가정/군부대/PC방 등 언제 어디서나 무료로 사용 가능함
 
 # 실행시 문제 해결 방법. 
 실행 : C:/varsql-webappv.0.0.1/bin>startup.bat
